@@ -37,8 +37,10 @@ public class RotaPedidos extends RouteBuilder {
 		
 		from("direct:soap")
 			.routeId("rota-soap")
-			.setBody(constant("<envelope>Teste</envelope>"))
-		.to("mock:soap");
+			.to("xslt:pedido-para-soap.xslt")
+			.setHeader(Exchange.CONTENT_TYPE, constant("text/xml"))
+			.log("${body}")
+		.to("http://localhost:8080/webservices/financeiro");
 
 	}
 
