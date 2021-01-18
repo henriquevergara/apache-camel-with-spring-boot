@@ -1,0 +1,8 @@
+<negociacao>
+    <preco>305.91</preco>
+    <quantidade>17</quantidade>
+    <data>
+      <time>1606521600000</time>
+      <timezone>Etc/UTC</timezone>
+    </data>
+  </negociacao>
